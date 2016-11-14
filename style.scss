@@ -1,0 +1,261 @@
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+/* @include font-face("FuturaC", "/wp-content/themes/rohrperle/fonts/Futura-CondensedMedium", $file-formats: eot ttf svg woff2 woff); */
+
+$mainfont: "Open Sans";	
+
+$maincolor: #001C61;
+
+$textcolor: #666666;
+$lightgrey: #CCCCCC;
+$red: #D2180A;
+$idipferl: #E57E25;
+
+$firstbreak: 1200px;
+$secondbreak: 800px;
+$thirdbreak: 400px;
+
+/* ALLGEMEIN */
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+html, body, *{box-sizing: border-box}
+
+html{
+	margin-top: 0px !important;
+}
+
+*{
+	font-family: $mainfont;
+	font-weight: 400;
+	position: relative;
+	text-align: center;
+}
+
+.highlight{
+	color: $red;
+}
+
+.center{
+	margin: 0 auto;
+	display: block;
+}
+
+section.outer{@include outer-container;}
+
+
+/** HEADER **/ 
+
+header{
+	background-color: $maincolor;
+	padding-top: 100px;
+	padding-bottom: 200px;
+	h1{
+		margin-top:0;
+		margin-bottom: 0;
+		text-align: center;
+		color: #FFFFFF;
+		font-weight: 700;
+		font-size: 3.5rem;
+		.highlight{
+			font-weight: 700;
+		}
+		.sub{
+			font-size: 2rem;
+			margin-top: 0;
+			display:block;
+			top: -10px;
+		}
+	}
+	button{
+		background-color: #FFFFFF;
+		box-shadow: 0px 0px 5px #000000;
+		font-size: 1.5rem;
+		border: none;
+		padding: 0.5rem 1rem;
+		margin-top: 50px !important;
+		font-weight: 600;
+		color: $maincolor;
+		.highlight{
+			font-weight: 600;
+		}
+	}
+	p{
+		text-align: center;
+		color: $lightgrey;
+		font-weight: 600;
+		font-size: 0.8rem;
+	}
+}
+
+/* CONTENT */
+
+video{
+	top: -100px;
+}
+
+article{
+	h3{
+		margin-top: 0;
+		color: $maincolor;
+		font-size: 3.5rem;
+		margin-bottom: 0px;
+	}
+	h4{
+		color: $lightgrey;
+		font-size: 1.6rem;
+		margin-top: 0;
+		display: block;
+	}
+	.ueberzeugt section.inner{
+		margin-top: 30px;
+		margin-bottom: 100px;
+		@include span-columns(4);
+		img{
+			border: 8px rgba($maincolor, 0.5) solid;
+			border-radius: 50%;
+			width: 40%;
+			padding: 3%;
+		}
+		h1{
+			color: $maincolor;
+			font-size: 1.8rem;
+		}
+		p{
+			color: $textcolor;
+			font-size: 0.95rem;
+			width: 70%;
+			margin: 0 auto;
+
+		}
+	}
+	.announcement{
+		color: $red;
+		border: 5px $red solid;
+		display: inline-block;
+		font-size: 1.3rem;
+		padding: 0.2rem 1.3rem;
+		font-weight: 600;
+		margin-top: 10px
+	}
+	.sonderangebot{
+		max-width: 800px !important;
+		margin-top: 30px;
+		margin-bottom: 100px;
+	}
+	.sonderangebot section{
+		height: 200px;
+		display: flex !important;
+		flex-direction: column;
+		justify-content: center;
+		&:nth-child(1){
+			@include span-columns(5);
+			background-color: $maincolor;
+			h1, h2{
+				color: #FFF;
+			}
+			h1{
+				font-weight: 700;
+			}
+		}
+		&:nth-child(2){
+			@include span-columns(2);
+			font-size: 4rem;
+			color: $maincolor;
+		}
+		&:nth-child(3){
+			@include span-columns(5);
+			background-color: $idipferl;
+			img{
+				width: 70%;
+			}
+		}
+	}
+}
+
+/* FOOTER */
+footer{
+	background-color: $idipferl;
+	padding-bottom: 30px;
+	*{
+		color: #FFF;
+	}
+	.inner:nth-child(1){
+		@include span-columns(7);
+		}
+	.inner:nth-child(2){
+		@include span-columns(5);
+		padding-top: 50px;
+	}
+
+	h1{
+		color: #FFF;
+		font-size: 2.5rem;
+		img{
+			width: 250px;
+			margin-top:-50px;
+			top:066px;
+		}
+	}
+	h2{
+		font-size: 1.8rem;
+	}
+	a{
+		text-decoration: none;
+		border-bottom: 3px rgba(255,255,255,0.3) solid;
+		display: inline;
+		margin: 0 15px;
+		line-height: 1rem;
+		display:inline-block;
+		&:hover{
+			border-bottom: 3px rgba(255,255,255,0.7) solid;
+		}
+	}
+	p{
+		width: 60%;
+		padding: 50px 0;
+	}
+	#mc_embed_signup{
+		width: 90%;
+		margin: 0 auto;
+		.email{
+			background-color: #f2f2f2;
+			border: none;
+			color: $textcolor;
+			float:left;
+			width: 75%;
+			height: 40px;
+			z-index: 777;
+			font-size: 1rem;
+		}
+		#mc-embedded-subscribe{
+			background-color: $idipferl;
+			border: none;
+			width: 25%;
+			height: 40px;
+			box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+
+		}
+	}
+}
